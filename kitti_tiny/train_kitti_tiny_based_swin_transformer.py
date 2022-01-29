@@ -15,7 +15,7 @@ from mmdet.apis import train_detector
 from prepare_data.convert_data_format import KittiTinyDataset
 
 
-def get_cfg(cfg_fn, checkpoint_fn):
+def get_cfg(cfg_fn, checkpoint_fn=None):
     cfg = Config.fromfile(cfg_fn)
 
     # Modify dataset type and path
@@ -42,7 +42,8 @@ def get_cfg(cfg_fn, checkpoint_fn):
     # cfg.model.roi_head.mask_head.num_classes = 3
     # We can still use the pre-trained Mask RCNN model though we do not need to
     # use the mask branch
-    cfg.load_from = checkpoint_fn
+    if checkpoint_fn is not None:
+        cfg.load_from = checkpoint_fn
 
     # Set up working dir to save files and logs.
     cfg.work_dir = "./tutorial_exps"
