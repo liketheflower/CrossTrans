@@ -34,6 +34,111 @@ info = {
 }
 
 
+sunrgbd80_classsnames_ids_list = [
+    ["person", 1],
+    ["table", 2],
+    ["desk", 3],
+    ["sofa_chair", 4],
+    ["pillow", 5],
+    ["box", 6],
+    ["garbage_bin", 7],
+    ["cabinet", 8],
+    ["drawer", 9],
+    ["shelf", 10],
+    ["kitchen_counter", 11],
+    ["kitchen_cabinet", 12],
+    ["cpu", 13],
+    ["bench", 14],
+    ["file_cabinet", 15],
+    ["whiteboard", 16],
+    ["lamp", 17],
+    ["endtable", 18],
+    ["bookshelf", 19],
+    ["coffee_table", 20],
+    ["dresser", 21],
+    ["paper", 22],
+    ["printer", 23],
+    ["monitor", 24],
+    ["back_pack", 25],
+    ["night_stand", 26],
+    ["door", 27],
+    ["picture", 28],
+    ["ottoman", 29],
+    ["stool", 30],
+    ["outlet", 31],
+    ["towel", 32],
+    ["tray", 33],
+    ["bag", 34],
+    ["stove", 35],
+    ["bathtub", 36],
+    ["scanner", 37],
+    ["cubby", 38],
+    ["mirror", 39],
+    ["bottle", 40],
+    ["rack", 41],
+    ["cup", 42],
+    ["thermos", 43],
+    ["island", 44],
+    ["counter", 45],
+    ["bowl", 46],
+    ["plate", 47],
+    ["organizer", 48],
+    ["switch", 49],
+    ["pen", 50],
+    ["coffee_maker", 51],
+    ["cart", 52],
+    ["tv_stand", 53],
+    ["poster", 54],
+    ["soap_dispenser", 55],
+    ["toy", 56],
+    ["chair", 57],
+    ["sofa", 58],
+    ["plant", 59],
+    ["bed", 60],
+    ["dining_table", 61],
+    ["toilet", 62],
+    ["tv", 63],
+    ["laptop", 64],
+    ["mouse", 65],
+    ["basket", 66],
+    ["keyboard", 67],
+    ["telephone", 68],
+    ["microwave", 69],
+    ["oven", 70],
+    ["paper_towel_dispenser", 71],
+    ["sink", 72],
+    ["fridge", 73],
+    ["book", 74],
+    ["clock", 75],
+    ["vase", 76],
+    ["fire_extinguisher", 77],
+    ["blinds", 78],
+    ["podium", 79],
+    ["others", 80],
+]
+
+
+def get_categories_info():
+    """
+    "categories": [
+        {"supercategory": "person","id": 1,"name": "person"},
+        {"supercategory": "vehicle","id": 2,"name": "bicycle"},
+        {"supercategory": "vehicle","id": 3,"name": "car"},
+        {"supercategory": "vehicle","id": 4,"name": "motorcycle"},
+        {"supercategory": "vehicle","id": 5,"name": "airplane"},
+        ...
+        {"supercategory": "indoor","id": 89,"name": "hair drier"},
+        {"supercategory": "indoor","id": 90,"name": "toothbrush"}
+    ]
+    """
+    categories = [
+        {"supercategory": "sunrgbd", "id": idx, "name": cat}
+        for cat, idx in sunrgbd80_classsnames_ids_list
+    ]
+    print(categories)
+    return categories
+
+
 def get_images_info(img_files):
     """
     The image file has the format of "007663_dhs.png". For the coco style
@@ -145,10 +250,13 @@ def generate_annotation(img_folder, label_folder, annotation_filename):
     print(f"len of img_files {len(img_files)}")
     images_info = get_images_info(img_files)
     annotations_info = get_annotations_info(img_files, label_folder)
+    categories_info = get_categories_info()
     final_annotations = {
         "info": info,
+        "licenses": "none",
         "images": images_info,
         "annotations": annotations_info,
+        "categories": categories_info,
     }
     fn = label_folder + annotation_filename
     with open(fn, "w") as f:
