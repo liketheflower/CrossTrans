@@ -1,7 +1,7 @@
 # model settings
 model = dict(
     type='MaskRCNN',
-    pretrained='torchvision://resnet50',
+    #pretrained='torchvision://resnet50',
     backbone=dict(
         type='ResNet',
         depth=50,
@@ -65,7 +65,7 @@ model = dict(
             conv_out_channels=256,
             num_classes=80,
             loss_mask=dict(
-                type='CrossEntropyLoss', use_mask=True, loss_weight=1.0))),
+                type='CrossEntropyLoss', use_mask=True, loss_weight=0.0))),
     # model training and testing settings
     train_cfg=dict(
         rpn=dict(

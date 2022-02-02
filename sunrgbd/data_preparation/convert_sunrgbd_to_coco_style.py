@@ -216,7 +216,9 @@ def get_annotations_info(img_files, label_folder):
         for i in range(len(bboxes)):
             bbox = bboxes[i]
             category_id = int(labels[i])
-            segmentation = [bbox]
+            # add point x1 y1 x2 y2 x1 y1 to avoid the problem mentioned here
+            # https://github.com/cocodataset/cocoapi/issues/139
+            segmentation = [bbox + bbox[:2]]
             area = bbox[2] * bbox[3]
             anno_id = img_id * 100 + i
             ret.append(

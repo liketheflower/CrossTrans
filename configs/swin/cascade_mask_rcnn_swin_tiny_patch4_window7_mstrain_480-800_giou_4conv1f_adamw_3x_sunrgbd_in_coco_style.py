@@ -6,14 +6,14 @@ _base_ = [
 
 model = dict(
     backbone=dict(
-        embed_dims=96,
+        embed_dim=96,
         depths=[2, 2, 6, 2],
         num_heads=[3, 6, 12, 24],
         window_size=7,
-        #ape=False,
+        ape=False,
         drop_path_rate=0.2,
         patch_norm=True,
-        #use_checkpoint=False
+        use_checkpoint=False
     ),
     neck=dict(in_channels=[96, 192, 384, 768]),
     roi_head=dict(
