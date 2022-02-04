@@ -1,3 +1,4 @@
+# Please update the CocoDataset's CLASSS to rgbd class in the mmdet code base
 dataset_type = 'CocoDataset'
 data_root = '/data/sophia/a/Xiaoke.Shen54/DATASET/sunrgbd_DO_NOT_DELETE/'
 img_norm_cfg = dict(
@@ -45,4 +46,5 @@ data = dict(
         ann_file=data_root + 'val/gts/raw_gts/det_val.json',
         img_prefix=data_root + 'val/dhs/',
         pipeline=test_pipeline))
-evaluation = dict(metric=['bbox', 'segm'])
+evaluation = dict(classwise=True, metric=['bbox', 'segm'])
+#evaluation = dict(metric=['bbox', 'segm'])
