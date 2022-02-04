@@ -15,12 +15,9 @@ from terminaltables import AsciiTable
 from mmdet.core import eval_recalls
 from .builder import DATASETS
 from .custom import CustomDataset
+SUNRGBD_CLASSES = ('person', 'table', 'desk', 'sofa_chair', 'pillow', 'box', 'garbage_bin', 'cabinet', 'drawer', 'shelf', 'kitchen_counter', 'kitchen_cabinet', 'cpu', 'bench', 'file_cabinet', 'whiteboard', 'lamp', 'endtable', 'bookshelf', 'coffee_table', 'dresser', 'paper', 'printer', 'monitor', 'back_pack', 'night_stand', 'door', 'picture', 'ottoman', 'stool', 'outlet', 'towel', 'tray', 'bag', 'stove', 'bathtub', 'scanner', 'cubby', 'mirror', 'bottle', 'rack', 'cup', 'thermos', 'island', 'counter', 'bowl', 'plate', 'organizer', 'switch', 'pen', 'coffee_maker', 'cart', 'tv_stand', 'poster', 'soap_dispenser', 'toy', 'chair', 'sofa', 'plant', 'bed', 'dining_table', 'toilet', 'tv', 'laptop', 'mouse', 'basket', 'keyboard', 'telephone', 'microwave', 'oven', 'paper_towel_dispenser', 'sink', 'fridge', 'book', 'clock', 'vase', 'fire_extinguisher', 'blinds', 'podium', 'others')
 
-
-@DATASETS.register_module()
-class CocoDataset(CustomDataset):
-
-    CLASSES = ('person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus',
+CLASSES = ('person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus',
                'train', 'truck', 'boat', 'traffic light', 'fire hydrant',
                'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog',
                'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe',
@@ -35,6 +32,9 @@ class CocoDataset(CustomDataset):
                'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock',
                'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush')
 
+@DATASETS.register_module()
+class CocoDataset(CustomDataset):
+    CLASSES = SUNRGBD_CLASSES
     def load_annotations(self, ann_file):
         """Load annotation from COCO style annotation file.
 

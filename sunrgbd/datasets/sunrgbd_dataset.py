@@ -1,6 +1,6 @@
 from mmdet.datasets.builder import DATASETS 
 from mmdet.datasets.coco import CocoDataset
-from data_preparation.convert_sunrgbd_to_coco_style import sunrgbd80_classsnames_ids_list
+from sunrgbd.data_preparation.convert_sunrgbd_to_coco_style import sunrgbd80_classsnames_ids_list
 sun_rgbd_classes = tuple([category for category, _ in sunrgbd80_classsnames_ids_list])
 print("sun_rgbd_classes: ", sun_rgbd_classes)
 """
@@ -21,6 +21,10 @@ print("sun_rgbd_classes: ", sun_rgbd_classes)
                'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush') 
 
 """
+"""
 @DATASETS.register_module()                                                             
 class SunrgbdDataset(CocoDataset):
-    CLASSES = sun_rgbd_classes                                                                           
+    CLASSES = sun_rgbd_classes    
+
+"""
+                                                                       
