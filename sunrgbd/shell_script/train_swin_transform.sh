@@ -13,12 +13,13 @@
 # cfg=configs/swin/mask_rcnn_swin-t-p4-w7_fpn_ms-crop-3x_coco.py
 # python tools/train.py  ${cfg} > train_swin_NO_fp16.log
 
-# Train WITHOUT a pretrained model, train from scratch
-#cfg=configs/swin/mask_rcnn_swin-t-p4-w7_fpn_ms-crop-3x_coco_no_pretrain.py
 #python tools/train.py  ${cfg} > train_swin_NO_fp16_no_pretrain.log
 
 
 # Updated the coco setups using load from
-cfg=configs/swin/mask_rcnn_swin-t-p4-w7_fpn_ms-crop-3x_coco_load_from.py 
-python tools/train.py  ${cfg} > train_swin_load_from_new_coco_dataset.log
+#cfg=configs/swin/mask_rcnn_swin-t-p4-w7_fpn_ms-crop-3x_coco_load_from.py 
+#python tools/train.py  ${cfg} > train_swin_load_from_new_coco_dataset.log
 
+# Train WITHOUT a pretrained model, train from scratch
+cfg=configs/swin/mask_rcnn_swin-t-p4-w7_fpn_ms-crop-3x_coco_no_pretrain.py
+python tools/train.py  ${cfg} > train_swin_without_intertrans_new_coco_dataset.log

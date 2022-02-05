@@ -11,12 +11,9 @@
 
 # Train with a pretrained model
 cfg=configs/swin/mask_rcnn_swin-t-p4-w7_fpn_ms-crop-3x_coco.py
-checkpoint=/data/sophia/a/Xiaoke.Shen54/repos/RGB2PC/work_dirs/mask_rcnn_swin-t-p4-w7_fpn_ms-crop-3x_coco_with_pretrain_weights/epoch_100.pth
+checkpoint=/data/sophia/a/Xiaoke.Shen54/repos/RGB2PC/work_dirs/mask_rcnn_swin-t-p4-w7_fpn_ms-crop-3x_coco_load_from/epoch_100.pth
 save_dir="./vis/"
-#python tools/test.py  ${cfg} ${checkpoint} --eval --gpu-collect --show --show-dir=${save_dir} >test_swin_pretrained.log
-
 python tools/test.py  ${cfg} ${checkpoint} --eval=bbox --show --show-dir=${save_dir} >test_swin_pretrained.log
-#python tools/test.py  ${cfg} ${checkpoint} --eval=bbox > test_swin_pretrained_unshown.log
 
 # Train WITHOUT a pretrained model, train from scratch
 #cfg=configs/swin/mask_rcnn_swin-t-p4-w7_fpn_ms-crop-3x_coco_no_pretrain.py
