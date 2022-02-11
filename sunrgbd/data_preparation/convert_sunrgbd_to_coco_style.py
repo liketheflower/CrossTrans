@@ -265,20 +265,20 @@ def generate_annotation(img_folder, label_folder, annotation_filename):
         json.dump(final_annotations, f)
 
 
-def convert_data_to_coco_style(dataset_folder):
+def convert_data_to_coco_style(dataset_folder, img_type="rgb"):
     """
     Convert our SUN RGBD dataset to coco style
     """
     # For train
-    img_folder = dataset_folder + "train/dhs/"
+    img_folder = dataset_folder + "train/" + img_type + "/"
     label_folder = dataset_folder + "train/gts/raw_gts/"
-    generate_annotation(img_folder, label_folder, "det_train.json")
+    generate_annotation(img_folder, label_folder, "det_train"+img_type + ".json")
     # For test
-    img_folder = dataset_folder + "val/dhs/"
+    img_folder = dataset_folder + "val/"+ img_type + "/"      
     label_folder = dataset_folder + "val/gts/raw_gts/"
-    generate_annotation(img_folder, label_folder, "det_val.json")
+    generate_annotation(img_folder, label_folder, "det_val"+img_type + ".json")
 
 
 if __name__ == "__main__":
     sunrgbd_folder = "/data/sophia/a/Xiaoke.Shen54/DATASET/sunrgbd_DO_NOT_DELETE/"
-    convert_data_to_coco_style(sunrgbd_folder)
+    convert_data_to_coco_style(sunrgbd_folder, "rgb")
