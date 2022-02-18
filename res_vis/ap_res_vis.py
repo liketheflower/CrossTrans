@@ -1,6 +1,6 @@
 """
 
-	F-Voxnet	Swin-T wo InterTrans	Swin-T with InterTrans	R-50 wo InterTrans	R-50 with InterTrans
+	F-Voxnet	Swin-T wo simCrossTrans	Swin-T with simCrossTrans	R-50 wo simCrossTrans	R-50 with simCrossTrans
 FPS	8.333333333	9.515372154	9.515372154	14.31029699	14.31029699
 AP50	37.275	36.6125	52.70625	29.775	42.975
 #param (M)	101	85	85	82	82
@@ -12,18 +12,17 @@ plt.box(False)
 
 methods = [
     "F-Voxnet",
-    "Swin-T wo InterTrans",
-    "Swin-T with InterTrans",
-    "R-50 wo InterTrans",
-    "R-50 with InterTrans",
+    "Swin-T w/o simCrossTrans",
+    "Swin-T with simCrossTrans",
+    "R-50 w/o simCrossTrans",
+    "R-50 with simCrossTrans",
 ]
 FPS = [8.333333333, 9.515372154, 9.515372154, 14.31029699, 14.31029699]
 AP50 = [37.275, 36.6125, 52.70625, 29.775, 42.975]
-params = [101, 85, 85, 82, 82]
+params_ = [64.1,48 , 48, 45.0, 45.0]
 # For better vis
-params_ = [101 * 1.5, 85 * 1, 85 * 1, 82 * 0.95, 82 * 0.95]
 # params_round = [round(p/10) for p in params]
-params_round = [p * 5 for p in params_]
+params_round = [p * 8 for p in params_]
 print(params_round)
 conv_color = "#66bd63"
 trans_color = "#f46d43"
