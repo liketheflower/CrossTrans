@@ -1,10 +1,9 @@
 """
 
 	F-Voxnet	Swin-T wo simCrossTrans	Swin-T with simCrossTrans	R-50 wo simCrossTrans	R-50 with simCrossTrans
-FPS	8.333333333	9.515372154	9.515372154	14.31029699	14.31029699
+FPS    9.091		9.515372154	9.515372154	14.31029699	14.31029699
 AP50	37.275	36.6125	52.70625	29.775	42.975
-#param (M)	101	85	85	82	82
-FLOPs (G)	819	745	745	739	739
+#param (M)	64.1	48	48	45	45
 """
 import matplotlib.pyplot as plt
 
@@ -17,9 +16,9 @@ methods = [
     "R-50 w/o simCrossTrans",
     "R-50 with simCrossTrans",
 ]
-FPS = [8.333333333, 9.515372154, 9.515372154, 14.31029699, 14.31029699]
+FPS = [9.091, 9.515372154, 9.515372154, 14.31029699, 14.31029699]
 AP50 = [37.275, 36.6125, 52.70625, 29.775, 42.975]
-params_ = [64.1,48 , 48, 45.0, 45.0]
+params_ = [64.1, 48, 48, 45.0, 45.0]
 # For better vis
 # params_round = [round(p/10) for p in params]
 params_round = [p * 8 for p in params_]
