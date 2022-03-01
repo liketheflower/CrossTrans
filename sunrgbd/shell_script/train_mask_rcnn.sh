@@ -1,4 +1,4 @@
-# Train with interTrans  train from scratch
+# Train with interTrans 
 #cfg=configs/mask_rcnn/mask_rcnn_r50_fpn_mstrain-poly_3x_coco.py
 #python tools/train.py  ${cfg} > train_maskrcnn_with_intertrans_new_coco_dataset.log
 

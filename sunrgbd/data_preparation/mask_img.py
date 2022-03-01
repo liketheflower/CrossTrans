@@ -21,10 +21,10 @@ def mask_an_image(input_img_fn, output_img_path, mask_prob=0):
     cv2.imwrite(output_img_path + fn, img)
 
 
-def process_foler(mask_prob):
+def process_folder(mask_prob):
     print(mask_prob)
     input_img_path = (
-        "/data/sophia/a/Xiaoke.Shen54/DATASET/sunrgbd_DO_NOT_DELETE/val/dhs/"
+        "/data/sophia/a/Xiaoke.Shen54/DATASET/sunrgbd_DO_NOT_DELETE/train/dhs/"
     )
     img_files = sorted(glob.glob(input_img_path + "*.png"))
     print(len(img_files))
@@ -39,4 +39,4 @@ def process_foler(mask_prob):
 
 if __name__ == "__main__":
     for mask_prob in [0.8, 0.6, 0.4, 0.2]:
-        process_foler(mask_prob)
+        process_folder(mask_prob)
