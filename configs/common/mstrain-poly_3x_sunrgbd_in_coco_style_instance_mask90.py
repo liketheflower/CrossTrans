@@ -51,17 +51,17 @@ data = dict(
         dataset=dict(
             type=dataset_type,
             ann_file=data_root + 'train/gts/raw_gts/det_train.json',                        
-            img_prefix=data_root + 'train/dhs80/',   
+            img_prefix=data_root + 'train/dhs90/',   
             pipeline=train_pipeline)),
     val=dict(
         type=dataset_type,
         ann_file=data_root + 'val/gts/raw_gts/det_val.json',
-        img_prefix=data_root + 'val/dhs80/',
+        img_prefix=data_root + 'val/dhs90/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         ann_file=data_root + 'val/gts/raw_gts/det_val.json',
-        img_prefix=data_root + 'val/dhs80/',
+        img_prefix=data_root + 'val/dhs90/',
         pipeline=test_pipeline))
 evaluation = dict(classwise=True, metric=['bbox', 'segm'])
 

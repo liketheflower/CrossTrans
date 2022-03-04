@@ -23,8 +23,11 @@ def mask_an_image(input_img_fn, output_img_path, mask_prob=0):
 
 def process_folder(mask_prob):
     print(mask_prob)
+    #input_img_path = (
+    #    "/data/sophia/a/Xiaoke.Shen54/DATASET/sunrgbd_DO_NOT_DELETE/train/dhs/"
+    #)
     input_img_path = (
-        "/data/sophia/a/Xiaoke.Shen54/DATASET/sunrgbd_DO_NOT_DELETE/train/dhs/"
+        "/data/sophia/a/Xiaoke.Shen54/DATASET/sunrgbd_DO_NOT_DELETE/val/dhs/"
     )
     img_files = sorted(glob.glob(input_img_path + "*.png"))
     print(len(img_files))
@@ -38,5 +41,6 @@ def process_folder(mask_prob):
 
 
 if __name__ == "__main__":
-    for mask_prob in [0.8, 0.6, 0.4, 0.2]:
+    #for mask_prob in [0.8, 0.6, 0.4, 0.2]:
+    for mask_prob in [0.95, 0.90, 0.85]:
         process_folder(mask_prob)
