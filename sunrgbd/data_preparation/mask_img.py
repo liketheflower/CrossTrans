@@ -27,7 +27,7 @@ def process_folder(mask_prob):
     #    "/data/sophia/a/Xiaoke.Shen54/DATASET/sunrgbd_DO_NOT_DELETE/train/dhs/"
     #)
     input_img_path = (
-        "/data/sophia/a/Xiaoke.Shen54/DATASET/sunrgbd_DO_NOT_DELETE/val/dhs/"
+        "/data/sophia/a/Xiaoke.Shen54/DATASET/sunrgbd_DO_NOT_DELETE/train/dhs/"
     )
     img_files = sorted(glob.glob(input_img_path + "*.png"))
     print(len(img_files))
