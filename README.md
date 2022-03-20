@@ -3,7 +3,7 @@
 
 This repo contains the supported code and configuration files to reproduce object detection results of [simCrossTrans]. It is modified based on [Swin Transformer for object detection](https://github.com/SwinTransformer/Swin-Transformer-Object-Detection). [Original Readme](./README_original.md)
 ## System overview  ##
-
+![System overview](./figures/crosstrans_main-006223-v2.pdf)
 ## Usage ##
 
 ### Installation ##
